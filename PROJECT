@@ -1,0 +1,5 @@
+domain: chumper.cn
+layout: go.kubebuilder.io/v2
+projectName: kube-faas
+repo: chumper.cn/kube-faas
+version: 3-alpha
