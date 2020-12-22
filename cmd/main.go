@@ -28,7 +28,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
 	appv1 "chumper.cn/kube-faas/api/v1"
-	"chumper.cn/kube-faas/controllers"
+	"chumper.cn/kube-faas/pkg/controllers"
 	// +kubebuilder:scaffold:imports
 )
 
