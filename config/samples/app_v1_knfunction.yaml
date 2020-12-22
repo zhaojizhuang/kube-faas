@@ -1,0 +1,7 @@
+apiVersion: app.chumper.cn/v1
+kind: KnFunction
+metadata:
+  name: knfunction-sample
+spec:
+  # Add fields here
+  foo: bar

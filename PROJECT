@@ -2,4 +2,8 @@ domain: chumper.cn
 layout: go.kubebuilder.io/v2
 projectName: kube-faas
 repo: chumper.cn/kube-faas
+resources:
+- group: app
+  kind: KnFunction
+  version: v1
 version: 3-alpha

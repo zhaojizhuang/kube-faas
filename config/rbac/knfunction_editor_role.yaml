@@ -1,0 +1,24 @@
+# permissions for end users to edit knfunctions.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: knfunction-editor-role
+rules:
+- apiGroups:
+  - app.chumper.cn
+  resources:
+  - knfunctions
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - app.chumper.cn
+  resources:
+  - knfunctions/status
+  verbs:
+  - get
