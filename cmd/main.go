@@ -17,6 +17,7 @@ limitations under the License.
 package main
 
 import (
+	"context"
 	"flag"
 	"os"
 
@@ -68,9 +69,11 @@ func main() {
 	}
 
 	if err = (&controllers.KnFunctionReconciler{
-		Client: mgr.GetClient(),
-		Log:    ctrl.Log.WithName("controllers").WithName("KnFunction"),
-		Scheme: mgr.GetScheme(),
+		Client:  mgr.GetClient(),
+		Log:     ctrl.Log.WithName("controllers").WithName("KnFunction"),
+		Scheme:  mgr.GetScheme(),
+		Context: context.Background(),
+		Recorder: mgr.GetEventRecorderFor("KnFunction"),
 	}).SetupWithManager(mgr); err != nil {
 		setupLog.Error(err, "unable to create controller", "controller", "KnFunction")
 		os.Exit(1)
