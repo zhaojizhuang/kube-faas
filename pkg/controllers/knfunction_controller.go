@@ -46,9 +46,9 @@ func (r *KnFunctionReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) 
 	var FunList appv1.KnFunctionList
 	r.List(r.Context, &FunList, client.InNamespace(req.Namespace))
 	var fun appv1.KnFunction
-	r.Get(r.Context,&fun)
+	r.Get(r.Context,req.NamespacedName,fun)
 	log.V(1).Info("list", "functionlist", FunList)
-	r.Recorder.Eventf(req, corev1.EventTypeWarning, "Error", "some error")
+	r.Recorder.Eventf(fun, corev1.EventTypeWarning, "Error", "some error")
 	return ctrl.Result{}, nil
 }
 
